@@ -673,6 +673,17 @@ const evaluateRamen = (sequence) => {
     }
   }
 
+  // 불 끄기 체크 - 안전 경고
+  if (!has('fireOff')) {
+    return {
+      success: false,
+      message: '🔥 불을 안 껐어요!',
+      description: '불을 안 끄면 위험해요! 사고날 뻔했어요!',
+      emoji: '⚠️',
+      resultType: 'fire_not_off'
+    };
+  }
+
   // 모든 조건 통과!
   return {
     success: true,
