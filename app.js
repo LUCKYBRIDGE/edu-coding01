@@ -1437,7 +1437,17 @@ const getImageInfo = (sequence) => {
   const imageNameKey = [BODY_STATE_MAP[bodyKey], FEET_STATE_MAP[feetKey]].filter(Boolean).join('_') || 'basic';
   const finalImageName = FILENAME_MAP[imageNameKey] || '1.basic.png';
   const imageUrl = `images/rainy-day/${finalImageName}`;
-  const caption = imageNameKey === 'basic' ? '기본' : imageNameKey.replace(/_/g, ' + ');
+
+  // 영어를 한글로 변환
+  const toKorean = (text) => {
+    return text
+      .replace(/backpack/g, '가방')
+      .replace(/raincoat/g, '비옷')
+      .replace(/socks/g, '양말')
+      .replace(/shoes/g, '운동화');
+  };
+
+  const caption = imageNameKey === 'basic' ? '기본' : toKorean(imageNameKey).replace(/_/g, ' + ');
   return { imageUrl, altText: `캐릭터 상태: ${caption}`, caption };
 };
 
