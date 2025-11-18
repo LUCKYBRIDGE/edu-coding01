@@ -1474,25 +1474,25 @@ const evaluateRainyDay = (sequence) => {
   }
 
   if (has('shoes') && has('socks') && shoesIndex < socksIndex) {
-    orderIssues.push('socks이 흙탕물에 젖어버렸어요. 🧦');
+    orderIssues.push('양말이 흙탕물에 젖어버렸어요. 🧦');
   }
   if (has('raincoat') && has('bag') && raincoatIndex < bagIndex) {
-    orderIssues.push('backpack이 비에 젖어버렸어요. 🎒');
+    orderIssues.push('가방이 비에 젖어버렸어요. 🎒');
   }
   if (has('socks') && !has('shoes')) {
-    orderIssues.push('신발을 안 신어서 socks이 젖고 지저분해졌어요. 🧦');
+    orderIssues.push('신발을 안 신어서 양말이 젖고 지저분해졌어요. 🧦');
   }
   if (!has('raincoat')) {
-    orderIssues.push('raincoat을 안 입어서 온몸이 다 젖었어요. 🌧️');
+    orderIssues.push('비옷을 안 입어서 온몸이 다 젖었어요. 🌧️');
   }
   if (!has('socks') && !has('shoes')) {
     orderIssues.push('맨발이라 발이 다 젖었어요. 🦶');
   }
   if (!has('socks') && has('shoes')) {
-    orderIssues.push('socks을 안 신어서 신발 속이 끈적하고 불편해요. 🥿');
+    orderIssues.push('양말을 안 신어서 신발 속이 끈적하고 불편해요. 🥿');
   }
   if (!has('bag')) {
-    orderIssues.push('backpack을 안 메서 준비물을 챙기지 못했어요. 🎒');
+    orderIssues.push('가방을 안 메서 준비물을 챙기지 못했어요. 🎒');
   }
 
   return {
