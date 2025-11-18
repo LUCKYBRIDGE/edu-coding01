@@ -1856,7 +1856,7 @@ function RainyDayGame({ onBack }) {
     if (problems.length > 0) {
       setResult({ status: 'failure', title: '등교 실패! 😥', messages: problems });
     } else {
-      setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, backpack도 젖지 않았어요! 완벽한 절차입니다!'] });
+      setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, 가방도 젖지 않았어요! 완벽한 절차입니다!'] });
     }
 
     setIsModalOpen(true);
@@ -1931,7 +1931,7 @@ function RainyDayGame({ onBack }) {
           if (problems.length > 0) {
             setResult({ status: 'failure', title: '등교 실패! 😥', messages: problems });
           } else {
-            setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, backpack도 젖지 않았어요! 완벽한 절차입니다!'] });
+            setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, 가방도 젖지 않았어요! 완벽한 절차입니다!'] });
           }
           setIsModalOpen(true);
         }, 500);
