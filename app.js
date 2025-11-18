@@ -687,7 +687,7 @@ const determineRamenState = (sequence) => {
   const ids = sequence.map((b) => b.id);
   const has = (id) => ids.includes(id);
 
-  // 라면 봉지 상태: 기본, 물, 끓는물, 조리중, 완성
+  // 라면 봉지 상태: basic, 물, 끓는물, 조리중, 완성
   if (has('noodle')) {
     const noodleIdx = ids.indexOf('noodle');
     const waitsAfterNoodle = ids.slice(noodleIdx + 1).filter(id => id === 'waitBoil').length;
@@ -1347,10 +1347,10 @@ function RamenGame({ onBack }) {
 // ==================== 비오는날 등교 게임 ====================
 
 const RAINY_DAY_BLOCKS = {
-  socks: { id: 'socks', text: '양말 신기', color: 'bg-cyan-500', isDistraction: false },
-  shoes: { id: 'shoes', text: '운동화 신기', color: 'bg-cyan-600', isDistraction: false },
-  bag: { id: 'bag', text: '가방 메기', color: 'bg-emerald-500', isDistraction: false },
-  raincoat: { id: 'raincoat', text: '비옷 입기', color: 'bg-emerald-600', isDistraction: false },
+  socks: { id: 'socks', text: 'socks 신기', color: 'bg-cyan-500', isDistraction: false },
+  shoes: { id: 'shoes', text: 'shoes 신기', color: 'bg-cyan-600', isDistraction: false },
+  bag: { id: 'bag', text: 'backpack 메기', color: 'bg-emerald-500', isDistraction: false },
+  raincoat: { id: 'raincoat', text: 'raincoat 입기', color: 'bg-emerald-600', isDistraction: false },
   tv: { id: 'tv', text: 'TV 보기', color: 'bg-amber-500', isDistraction: true },
   game: { id: 'game', text: '게임하기', color: 'bg-rose-500', isDistraction: true },
 };
@@ -1368,46 +1368,46 @@ const RAINY_DAY_INITIAL_PALETTE = Object.values(RAINY_DAY_BLOCKS);
 
 const FEET_STATE_MAP = {
   bare: '',
-  socks: '양말',
-  shoes: '운동화',
-  socks_shoes: '양말_운동화',
-  shoes_socks: '운동화_양말',
+  socks: 'socks',
+  shoes: 'shoes',
+  socks_shoes: 'socks_shoes',
+  shoes_socks: 'shoes_socks',
 };
 
 const BODY_STATE_MAP = {
   bare: '',
-  bag: '가방',
-  raincoat: '비옷',
-  bag_raincoat: '가방_비옷',
-  raincoat_bag: '비옷_가방',
+  bag: 'backpack',
+  raincoat: 'raincoat',
+  bag_raincoat: 'backpack_raincoat',
+  raincoat_bag: 'raincoat_backpack',
 };
 
 const FILENAME_MAP = {
-  기본: '1.기본.png',
-  양말: '2.양말.png',
-  운동화: '3.운동화.png',
-  양말_운동화: '4.양말_운동화.png',
-  운동화_양말: '5.운동화_양말.png',
-  가방: '6.가방.png',
-  비옷: '7.비옷.png',
-  가방_비옷: '8.가방_비옷.png',
-  비옷_가방: '9.비옷_가방.png',
-  가방_양말: '10.가방_양말.png',
-  가방_운동화: '11.가방_운동화.png',
-  가방_양말_운동화: '12.가방_양말_운동화.png',
-  가방_운동화_양말: '13.가방_운동화_양말.png',
-  비옷_양말: '14.비옷_양말.png',
-  비옷_운동화: '15.비옷_운동화.png',
-  비옷_양말_운동화: '16.비옷_양말_운동화.png',
-  비옷_운동화_양말: '17.비옷_운동화_양말.png',
-  가방_비옷_양말: '18.가방_비옷_양말.png',
-  가방_비옷_운동화: '19.가방_비옷_운동화.png',
-  가방_비옷_양말_운동화: '20.가방_비옷_양말_운동화.png',
-  가방_비옷_운동화_양말: '21.가방_비옷_운동화_양말.png',
-  비옷_가방_양말: '22.비옷_가방_양말.png',
-  비옷_가방_운동화: '23.비옷_가방_운동화.png',
-  비옷_가방_운동화_양말: '24.비옷_가방_운동화_양말.png',
-  비옷_가방_양말_운동화: '25.비옷_가방_양말_운동화.png',
+  basic: '1.basic.png',
+  socks: '2.socks.png',
+  shoes: '3.shoes.png',
+  socks_shoes: '4.socks_shoes.png',
+  shoes_socks: '5.shoes_socks.png',
+  backpack: '6.backpack.png',
+  raincoat: '7.raincoat.png',
+  backpack_raincoat: '8.backpack_raincoat.png',
+  raincoat_backpack: '9.raincoat_backpack.png',
+  backpack_socks: '10.backpack_socks.png',
+  backpack_shoes: '11.backpack_shoes.png',
+  backpack_socks_shoes: '12.backpack_socks_shoes.png',
+  backpack_shoes_socks: '13.backpack_shoes_socks.png',
+  raincoat_socks: '14.raincoat_socks.png',
+  raincoat_shoes: '15.raincoat_shoes.png',
+  raincoat_socks_shoes: '16.raincoat_socks_shoes.png',
+  raincoat_shoes_socks: '17.raincoat_shoes_socks.png',
+  backpack_raincoat_socks: '18.backpack_raincoat_socks.png',
+  backpack_raincoat_shoes: '19.backpack_raincoat_shoes.png',
+  backpack_raincoat_socks_shoes: '20.backpack_raincoat_socks_shoes.png',
+  backpack_raincoat_shoes_socks: '21.backpack_raincoat_shoes_socks.png',
+  raincoat_backpack_socks: '22.raincoat_backpack_socks.png',
+  raincoat_backpack_shoes: '23.raincoat_backpack_shoes.png',
+  raincoat_backpack_shoes_socks: '24.raincoat_backpack_shoes_socks.png',
+  raincoat_backpack_socks_shoes: '25.raincoat_backpack_socks_shoes.png',
 };
 
 const determineCharacterState = (sequence) => {
@@ -1434,10 +1434,10 @@ const determineCharacterState = (sequence) => {
 
 const getImageInfo = (sequence) => {
   const { feetKey, bodyKey } = determineCharacterState(sequence);
-  const imageNameKey = [BODY_STATE_MAP[bodyKey], FEET_STATE_MAP[feetKey]].filter(Boolean).join('_') || '기본';
-  const finalImageName = FILENAME_MAP[imageNameKey] || '1.기본.png';
+  const imageNameKey = [BODY_STATE_MAP[bodyKey], FEET_STATE_MAP[feetKey]].filter(Boolean).join('_') || 'basic';
+  const finalImageName = FILENAME_MAP[imageNameKey] || '1.basic.png';
   const imageUrl = `images/rainy-day/${finalImageName}`;
-  const caption = imageNameKey === '기본' ? '기본' : imageNameKey.replace(/_/g, ' + ');
+  const caption = imageNameKey === 'basic' ? 'basic' : imageNameKey.replace(/_/g, ' + ');
   return { imageUrl, altText: `캐릭터 상태: ${caption}`, caption };
 };
 
@@ -1464,25 +1464,25 @@ const evaluateRainyDay = (sequence) => {
   }
 
   if (has('shoes') && has('socks') && shoesIndex < socksIndex) {
-    orderIssues.push('양말이 흙탕물에 젖어버렸어요. 🧦');
+    orderIssues.push('socks이 흙탕물에 젖어버렸어요. 🧦');
   }
   if (has('raincoat') && has('bag') && raincoatIndex < bagIndex) {
-    orderIssues.push('가방이 비에 젖어버렸어요. 🎒');
+    orderIssues.push('backpack이 비에 젖어버렸어요. 🎒');
   }
   if (has('socks') && !has('shoes')) {
-    orderIssues.push('신발을 안 신어서 양말이 젖고 지저분해졌어요. 🧦');
+    orderIssues.push('신발을 안 신어서 socks이 젖고 지저분해졌어요. 🧦');
   }
   if (!has('raincoat')) {
-    orderIssues.push('비옷을 안 입어서 온몸이 다 젖었어요. 🌧️');
+    orderIssues.push('raincoat을 안 입어서 온몸이 다 젖었어요. 🌧️');
   }
   if (!has('socks') && !has('shoes')) {
     orderIssues.push('맨발이라 발이 다 젖었어요. 🦶');
   }
   if (!has('socks') && has('shoes')) {
-    orderIssues.push('양말을 안 신어서 신발 속이 끈적하고 불편해요. 🥿');
+    orderIssues.push('socks을 안 신어서 신발 속이 끈적하고 불편해요. 🥿');
   }
   if (!has('bag')) {
-    orderIssues.push('가방을 안 메서 준비물을 챙기지 못했어요. 🎒');
+    orderIssues.push('backpack을 안 메서 준비물을 챙기지 못했어요. 🎒');
   }
 
   return {
@@ -1673,27 +1673,27 @@ function IntroScreen({ onStartGame }) {
 // 비오는 날 등교 오류 패턴 생성 함수
 const generateRainyDayBuggySequence = () => {
   const patterns = [
-    // 패턴 1: 신발 먼저 신고 양말 나중에
+    // 패턴 1: 신발 먼저 신고 socks 나중에
     [
       { ...RAINY_DAY_BLOCKS.shoes },
       { ...RAINY_DAY_BLOCKS.socks },
       { ...RAINY_DAY_BLOCKS.bag },
       { ...RAINY_DAY_BLOCKS.raincoat },
     ],
-    // 패턴 2: 가방 먼저 메고 비옷 나중에
+    // 패턴 2: backpack 먼저 메고 raincoat 나중에
     [
       { ...RAINY_DAY_BLOCKS.socks },
       { ...RAINY_DAY_BLOCKS.bag },
       { ...RAINY_DAY_BLOCKS.shoes },
       { ...RAINY_DAY_BLOCKS.raincoat },
     ],
-    // 패턴 3: 양말 안 신음
+    // 패턴 3: socks 안 신음
     [
       { ...RAINY_DAY_BLOCKS.shoes },
       { ...RAINY_DAY_BLOCKS.bag },
       { ...RAINY_DAY_BLOCKS.raincoat },
     ],
-    // 패턴 4: 비옷 안 입음
+    // 패턴 4: raincoat 안 입음
     [
       { ...RAINY_DAY_BLOCKS.socks },
       { ...RAINY_DAY_BLOCKS.shoes },
@@ -1846,7 +1846,7 @@ function RainyDayGame({ onBack }) {
     if (problems.length > 0) {
       setResult({ status: 'failure', title: '등교 실패! 😥', messages: problems });
     } else {
-      setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, 가방도 젖지 않았어요! 완벽한 절차입니다!'] });
+      setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, backpack도 젖지 않았어요! 완벽한 절차입니다!'] });
     }
 
     setIsModalOpen(true);
@@ -1921,7 +1921,7 @@ function RainyDayGame({ onBack }) {
           if (problems.length > 0) {
             setResult({ status: 'failure', title: '등교 실패! 😥', messages: problems });
           } else {
-            setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, 가방도 젖지 않았어요! 완벽한 절차입니다!'] });
+            setResult({ status: 'success', title: '등교 성공! 🥳', messages: ['발도, backpack도 젖지 않았어요! 완벽한 절차입니다!'] });
           }
           setIsModalOpen(true);
         }, 500);
@@ -2066,7 +2066,7 @@ function ManualModal({ isOpen, onClose }) {
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">✓</span>
-                <span className="text-sm sm:text-base"><strong>절차적 사고 학습:</strong> 순차, 조건, 반복 등 프로그래밍의 기본 개념을 익힐 수 있어요</span>
+                <span className="text-sm sm:text-base"><strong>절차적 사고 학습:</strong> 순차, 조건, 반복 등 프로그래밍의 basic 개념을 익힐 수 있어요</span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">✓</span>
