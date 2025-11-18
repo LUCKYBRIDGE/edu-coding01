@@ -1347,10 +1347,10 @@ function RamenGame({ onBack }) {
 // ==================== 비오는날 등교 게임 ====================
 
 const RAINY_DAY_BLOCKS = {
-  socks: { id: 'socks', text: 'socks 신기', color: 'bg-cyan-500', isDistraction: false },
-  shoes: { id: 'shoes', text: 'shoes 신기', color: 'bg-cyan-600', isDistraction: false },
-  bag: { id: 'bag', text: 'backpack 메기', color: 'bg-emerald-500', isDistraction: false },
-  raincoat: { id: 'raincoat', text: 'raincoat 입기', color: 'bg-emerald-600', isDistraction: false },
+  socks: { id: 'socks', text: '양말 신기', color: 'bg-cyan-500', isDistraction: false },
+  shoes: { id: 'shoes', text: '운동화 신기', color: 'bg-cyan-600', isDistraction: false },
+  bag: { id: 'bag', text: '가방 메기', color: 'bg-emerald-500', isDistraction: false },
+  raincoat: { id: 'raincoat', text: '비옷 입기', color: 'bg-emerald-600', isDistraction: false },
   tv: { id: 'tv', text: 'TV 보기', color: 'bg-amber-500', isDistraction: true },
   game: { id: 'game', text: '게임하기', color: 'bg-rose-500', isDistraction: true },
 };
@@ -1437,7 +1437,7 @@ const getImageInfo = (sequence) => {
   const imageNameKey = [BODY_STATE_MAP[bodyKey], FEET_STATE_MAP[feetKey]].filter(Boolean).join('_') || 'basic';
   const finalImageName = FILENAME_MAP[imageNameKey] || '1.basic.png';
   const imageUrl = `images/rainy-day/${finalImageName}`;
-  const caption = imageNameKey === 'basic' ? 'basic' : imageNameKey.replace(/_/g, ' + ');
+  const caption = imageNameKey === 'basic' ? '기본' : imageNameKey.replace(/_/g, ' + ');
   return { imageUrl, altText: `캐릭터 상태: ${caption}`, caption };
 };
 
@@ -2066,7 +2066,7 @@ function ManualModal({ isOpen, onClose }) {
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">✓</span>
-                <span className="text-sm sm:text-base"><strong>절차적 사고 학습:</strong> 순차, 조건, 반복 등 프로그래밍의 basic 개념을 익힐 수 있어요</span>
+                <span className="text-sm sm:text-base"><strong>절차적 사고 학습:</strong> 순차, 조건, 반복 등 프로그래밍의 기본 개념을 익힐 수 있어요</span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">✓</span>
