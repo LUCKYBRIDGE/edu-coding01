@@ -2083,7 +2083,7 @@ function ManualModal({ isOpen, onClose }) {
             <ul className="space-y-2 ml-4">
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">✓</span>
-                <span className="text-sm sm:text-base"><strong>초등 실과 교과서 활용:</strong> 초등학교 실과 교과서(이춘식) 78-81쪽의 내용을 다루며, 교과서와 함께 체험하면 학습 효과가 더욱 좋아요!</span>
+                <span className="text-sm sm:text-base"><strong>초등 실과 교과서 활용:</strong> 초등학교 실과 교과서의 내용을 다루며, 교과서와 함께 체험하면 학습 효과가 더욱 좋아요!</span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">✓</span>
