@@ -879,7 +879,7 @@ function RamenResultModal({ isOpen, onClose, result, animationFrames, isDebugMod
   `;
 }
 
-function RamenIntroScreen({ onStartGame }) {
+function RamenIntroScreen({ onStartGame, onBack }) {
   const steamBubbles = Array.from({ length: 30 }).map((_, i) => {
     const style = {
       left: `${40 + Math.random() * 20}%`,
@@ -894,6 +894,17 @@ function RamenIntroScreen({ onStartGame }) {
 
   return html`
     <div className="min-h-screen bg-gradient-to-br from-orange-200 via-red-100 to-yellow-200 flex items-center justify-center relative overflow-hidden p-4">
+      
+      <!-- 뒤로 가기 버튼 추가 -->
+      <div className="absolute top-4 left-4 z-50">
+        <button
+          onClick=${onBack}
+          className="bg-white/80 hover:bg-white text-orange-800 px-4 py-2 rounded-lg font-bold shadow-md transition-all border border-orange-300 backdrop-blur-sm"
+        >
+          ← 메뉴로 돌아가기
+        </button>
+      </div>
+
       <div className="absolute inset-0">
         ${steamBubbles.map(
           ({ style, key }) => html`
@@ -1289,7 +1300,7 @@ function RamenGame({ onBack }) {
   };
 
   if (showIntro) {
-    return html`<${RamenIntroScreen} onStartGame=${handleStartGame} />`;
+    return html`<${RamenIntroScreen} onStartGame=${handleStartGame} onBack=${onBack} />`;
   }
 
   return html`
@@ -1626,7 +1637,7 @@ function RainyDayResultModal({ isOpen, onClose, result, frameImages, isDebugMode
   `;
 }
 
-function IntroScreen({ onStartGame }) {
+function IntroScreen({ onStartGame, onBack }) {
   const raindrops = Array.from({ length: 50 }).map((_, i) => {
     const style = {
       left: `${Math.random() * 100}%`,
@@ -1641,6 +1652,17 @@ function IntroScreen({ onStartGame }) {
 
   return html`
     <div className="relative min-h-screen bg-sky-800 text-white flex flex-col items-center justify-center overflow-hidden p-4">
+      
+      <!-- 뒤로 가기 버튼 추가 -->
+      <div className="absolute top-4 left-4 z-50">
+        <button
+          onClick=${onBack}
+          className="bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-all border border-sky-400 backdrop-blur-sm"
+        >
+          ← 메뉴로 돌아가기
+        </button>
+      </div>
+
       ${raindrops}
       <div className="relative z-10 text-center bg-black/30 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-lg border border-sky-400 max-w-2xl">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">비오는날 등교 성공하기!</h1>
@@ -1951,7 +1973,7 @@ function RainyDayGame({ onBack }) {
   };
 
   if (showIntro) {
-    return html`<${IntroScreen} onStartGame=${handleStartGame} />`;
+    return html`<${IntroScreen} onStartGame=${handleStartGame} onBack=${onBack} />`;
   }
 
   return html`
